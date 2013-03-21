@@ -9,3 +9,6 @@ A-Select, CAS, OpenID, WS-Federation and OAuth identity protocols.
 
 This plugin integrates the SimpleSAMLphp login routines into the 
 REDAXO Community AddOn and uses code from the auth_facebook plugin.
+
+The plugin is work in progress: modules for login and logout are missing
+and the plugin expects an attribute array from a Shibboleth DFN-AII server.
