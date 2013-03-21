@@ -44,13 +44,10 @@ if (isset($I18N) && is_object($I18N))
 		$I18N->addMsg('com_auth_authsource','Auth-Plugin');
 }
 
-## Include xform classes
-$REX['ADDON']['community']['xform_path']['value'][] = $REX["INCLUDE_PATH"]."/addons/community/plugins/auth_simplesamlphp/xform/value/";
-
 # Settings..
-$REX['ADDON']['community']['plugin_auth_simplesamlphp']['facebook_conf'] = array(
-	'appId'=>$REX['ADDON']['community']['plugin_auth_simplesamlphp']['appId'],
-	'secret'=>$REX['ADDON']['community']['plugin_auth_simplesamlphp']['appSecret']
+$REX['ADDON']['community']['plugin_auth_simplesamlphp']['simplesamlphp_conf'] = array(
+	'simplesamlphpPath'=>$REX['ADDON']['community']['plugin_auth_simplesamlphp']['simplesamlphpPath'],
+	'authsource'=>$REX['ADDON']['community']['plugin_auth_simplesamlphp']['authSource']
 	);
 
 if($REX["REDAXO"])
@@ -58,14 +55,6 @@ if($REX["REDAXO"])
 	## Adding to Backend Menu
 	if($REX['USER'] && ($REX['USER']->isAdmin() || $REX['USER']->hasPerm("community[simplesamlphp]")))
 		$REX['ADDON']['community']['SUBPAGES'][] = array('plugin.auth_simplesamlphp','Facebook');
-
-}else
-{
-	## Include Auth
-	rex_register_extension('ADDONS_INCLUDED', create_function('','
-		global $REX,$I18N;
-		include $REX["INCLUDE_PATH"]."/addons/community/plugins/auth_simplesamlphp/inc/samlauth.php";
-	'));
 
 }
 
