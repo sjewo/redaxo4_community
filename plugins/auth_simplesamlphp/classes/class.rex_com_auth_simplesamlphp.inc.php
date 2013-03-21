@@ -1,5 +1,4 @@
 <?php
-
 class rex_com_auth_simplesamlphp
 {
 
@@ -9,8 +8,8 @@ class rex_com_auth_simplesamlphp
         $this->simplesamlphpPath = $REX['ADDON']['community']['plugin_auth_simplesamlphp']['simplesamlphpPath'];
         $this->hash_func = $REX['ADDON']['community']['plugin_auth']['passwd_algorithmus'];            
         $this->isHashed = $REX['ADDON']['community']['plugin_auth']['passwd_hashed'];
-        $this->article_login_failed = '/index.php?article_id='.$REX['ADDON']['community']['plugin_auth']['article_login_failed'];
-        $this->article_login_ok = '/index.php?article_id='.$REX['ADDON']['community']['plugin_auth']['article_login_ok'];
+        $this->article_login_failed = $REX['ADDON']['community']['plugin_auth']['article_login_failed'];
+        $this->article_login_ok = $REX['ADDON']['community']['plugin_auth']['article_login_ok'];
         $this->logoutUrl = '/index.php?article_id='.$REX['ADDON']['community']['plugin_auth']['article_logout'].'&rex_com_auth_logout=1';
         $this->redirect = $REX['ADDON']['community']['plugin_auth_simplesamlphp']['redirect'];
         $this->defaultgroups = $REX['ADDON']['community']['plugin_auth_simplesamlphp']['defaultgroups'];
@@ -39,7 +38,9 @@ class rex_com_auth_simplesamlphp
         $as = new SimpleSAML_Auth_Simple($this->authSource);
         $as->requireAuth(array(
             'RedirectTo' => 'https://rs.stat.ruhr-uni-bochum.de/index.php?article_id=35',
-            'KeepPost' => false));
+            'KeepPost' => false
+             )
+        );
         $attributes = $as->getAttributes();
 
         // create user/login user
@@ -102,14 +103,14 @@ class rex_com_auth_simplesamlphp
 
             if(rex_com_auth::getUser() && $this->redirect)
             {
-            //    rex_redirect($this->article_login_ok);
+                rex_redirect($this->article_login_ok);
             }
 
         } else 
         { // ------------------------- Login Error
             if(!(rex_com_auth::getUser()) && $this->redirect) 
             {
-            //    rex_redirect($this->article_login_failed);
+                rex_redirect($this->article_login_failed);
             }
         }
     }
