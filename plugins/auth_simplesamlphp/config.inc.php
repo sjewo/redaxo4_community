@@ -54,7 +54,7 @@ if($REX["REDAXO"])
 {
 	## Adding to Backend Menu
 	if($REX['USER'] && ($REX['USER']->isAdmin() || $REX['USER']->hasPerm("community[simplesamlphp]")))
-		$REX['ADDON']['community']['SUBPAGES'][] = array('plugin.auth_simplesamlphp','Facebook');
+		$REX['ADDON']['community']['SUBPAGES'][] = array('plugin.auth_simplesamlphp','SimpleSAML');
 
 }
 
