@@ -40,21 +40,19 @@ if($as->isAuthenticated()) {
 
     } else {
 
-          // -------------------------- User exists -> only update
-          // TODO: gu is missing.... 
-          $iu->setWhere('id='.$gu->getValue("id"));
-          $iu->update();
-          
-          rex_com_user::triggerUserUpdated($gu->getValue("id")); // TODO: params as array()
-          
+        // -------------------------- User exists 
+        // do nothing
+                   
         }
         
     // Login
     $params =  array("login" => $eduPersonTargetedID, "status" => 1);
     rex_com_auth::loginWithParams($params);
 
+    if(rex_com_auth::getUser() && $REX['ADDON']['community']['plugin_auth_simplesamlphp']['redirect']) rex_redirect($REX['ADDON']['community']['plugin_auth']['article_login_ok']);
+} else {
+    // ------------------------- Login Error
+    if(!(rex_com_auth::getUser()) && $REX['ADDON']['community']['plugin_auth_facebook']['redirect']) 	rex_redirect($REX['ADDON']['community']['plugin_auth']['article_login_failed'],'',array('rex_com_auth_info'=>'2'));
 }
-
-if(rex_com_auth::getUser() && $REX['ADDON']['community']['plugin_auth_simplesamlphp']['redirect']) rex_redirect($REX['ADDON']['community']['plugin_simplesamlphp']['article_login_ok']);
 
 ?>
