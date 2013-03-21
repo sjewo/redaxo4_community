@@ -42,7 +42,7 @@ class rex_com_auth_simplesamlphp
                 $iu->setTable("rex_com_user");
                 $iu->setValue("status",1); // ----- activate user profile
                 $iu->setValue("authsource",'simplesamlphp');
-                $iu->setValue("saml_idp",$idp); // ------ save IdP
+                $iu->setValue("samlidp",$idp); // ------ save IdP
                 $iu->setValue("login",$eduPersonTargetedID);
                 $iu->setValue("password",rex_com_auth_simplesamlphp::generatePassword('16'));
 
