@@ -1,0 +1,20 @@
+com_auth_simplesamlphp = SimpleSAMLphp
+com_auth_simplesamlphp_samlidp = IdP über den der Benutzer authentifiziert wurde
+
+com_auth_simplesamlphp_settings = Einstellungen
+com_auth_simplesamlphp_settings_description = Die Konfiguration des Service Providers geschieht in simpleSAMLphp. Nachfolgend muss der Pfad in dem die Datei _autoload.php liegt angegeben werden, sowie der Authentifizierungsdienst der genutzt werden soll (standard ist 'default-sp').
+com_auth_simplesamlphp_settings_simplesamlphp = simpleSAMLphp Einstellungen
+com_auth_simplesamlphp_settings_simplesamlphpPath = Pfad zur SimpleSAMLphp _autoload.php 
+com_auth_simplesamlphp_settings_authSource = Authentifizierungsdienst
+com_auth_simplesamlphp_settings_authSource_description = Authentifizierungsdienst der genutzt werden soll (standard ist 'default-sp')
+com_auth_simplesamlphp_settings_newuser = Standardeinstellungen für neue simpleSAML-User
+com_auth_simplesamlphp_settings_memberof = Gruppenmitgliedschaften
+com_auth_simplesamlphp_settings_none = keine
+com_auth_simplesamlphp_settings_update = Die Änderungen wurden übernommen
+com_auth_simplesamlphp_settings_failupdate = Die Änderungen konnten leider nicht übernommen werden. Prüfen Sie die Dateiberechtigungen
+
+com_auth_simplesamlphp_help_login_hl = Login auf der Website einbinden
+com_auth_simplesamlphp_help_login = Der Login erfolgt über da Modul simpleSAMLphpLogin. Dazu muss einfach Link auf den Artikel mit dem Modul gesetzt werden - optional kann ein andere Authentifizierungsdienst im Modul angegeben werden. Die Seite ruft automatische den IdP Login auf, falls der User nicht angemeldet ist und erzeugt automatisch einen neuen lokalen Nutzer mit dem login gleich der eduPersonTargetedID. 
+
+com_auth_simplesamlphp_info_installfinish = Das AddOn kann jetzt im Community AddOn konfiguriert werden!
+com_auth_simplesamlphp_error_missingaddons = Bitte überprüfen Sie ob folgende AddOns vorhanden sind: community
