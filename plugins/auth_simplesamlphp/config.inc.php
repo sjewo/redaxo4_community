@@ -17,8 +17,8 @@ $REX['ADDON']['version'][$mypage] = '0.0.1';
 // --- DYN
 $REX['ADDON']['community']['plugin_auth_simplesamlphp']['simplesamlphpPath'] = "";
 $REX['ADDON']['community']['plugin_auth_simplesamlphp']['authSource'] = "";
-$REX['ADDON']['community']['plugin_auth_simplesamlphp']['redirect'] = true;
 // --- /DYN
+$REX['ADDON']['community']['plugin_auth_simplesamlphp']['redirect'] = true;
 
 //
 // Synctranslation
