@@ -55,6 +55,13 @@ class rex_com_auth_simplesamlphp
             $sql->setQuery('SELECT login FROM rex_com_user WHERE login = "'.$eduPersonTargetedID.'"');
 
             if($sql->getRows() == 0) { // --- not in DB
+
+                // Don't create User if eduPearsontargetID is empty -> results in empty username!
+                if($eduPersonTargetedID=='') {
+                        rex_redirect($this->article_login_failed);
+                }
+
+
                 // -------------------------- Sync user to database
                 $iu = rex_sql::factory();
                 $iu->setTable("rex_com_user");
