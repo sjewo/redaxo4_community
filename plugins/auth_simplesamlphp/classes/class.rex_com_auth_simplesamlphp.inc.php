@@ -37,7 +37,7 @@ class rex_com_auth_simplesamlphp
     require_once($this->simplesamlphpPath);
     $as = new SimpleSAML_Auth_Simple($this->authSource);
     $as->requireAuth(array(
-      'RedirectTo' => $REX['SERVER'].rex_getUrl($REX['ADDON']['community']['plugin_auth']['article_login_ok']),
+      'RedirectTo' => $REX['SERVER'].rex_getUrl($this->article_login_ok),
       'KeepPost' => false
     )
   );
