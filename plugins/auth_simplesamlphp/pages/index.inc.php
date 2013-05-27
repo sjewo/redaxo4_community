@@ -8,10 +8,12 @@ if(rex_request("func","string")=="update")
 	$REX['ADDON']['community']['plugin_auth_simplesamlphp']['simplesamlphpPath'] = rex_request("simplesamlphpPath","string");
 	$REX['ADDON']['community']['plugin_auth_simplesamlphp']['authSource'] = rex_request("authSource","string");
 	$REX['ADDON']['community']['plugin_auth_simplesamlphp']['defaultgroups'] = rex_request("defaultgroups","array");
+    $REX['ADDON']['community']['plugin_auth_simplesamlphp']['article_login_idmissing'] = rex_request("article_login_idmissing","int");
 	
 	$content = '
 $REX[\'ADDON\'][\'community\'][\'plugin_auth_simplesamlphp\'][\'simplesamlphpPath\'] = "'.$REX['ADDON']['community']['plugin_auth_simplesamlphp']['simplesamlphpPath'].'";
 $REX[\'ADDON\'][\'community\'][\'plugin_auth_simplesamlphp\'][\'authSource\'] = "'.$REX['ADDON']['community']['plugin_auth_simplesamlphp']['authSource'].'";
+$REX[\'ADDON\'][\'community\'][\'plugin_auth_simplesamlphp\'][\'article_login_idmissing\'] = '.$REX['ADDON']['community']['plugin_auth_simplesamlphp']['article_login_idmissing'].';
 ';
 	
 	for($i = 0; $i < count($REX['ADDON']['community']['plugin_auth_simplesamlphp']['defaultgroups']); $i++)
@@ -72,8 +74,14 @@ echo '
 										<input class="rex-form-text" type="input" id="rex-form-authSource" name="authSource" value="'.$REX['ADDON']['community']['plugin_auth_simplesamlphp']['authSource'].'" />
 									</p>
 								</div>
-							
-							</div>
+
+                            <div class="rex-form-row">
+                                <p class="rex-form-col-a rex-form-widget">
+                                    <label for="rex-form-article_login_idmissing">'.$I18N->msg("com_auth_info_id_jump_login_missing").'</label>'. rex_var_link::_getLinkButton('article_login_idmissing', 2, stripslashes($REX['ADDON']['community']['plugin_auth_simplesamlphp']['article_login_idmissing'])) .'
+                                </p>
+                            </div>
+
+</div>
 						</fieldset><fieldset class="rex-form-col-1">';
 
 //

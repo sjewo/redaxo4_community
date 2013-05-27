@@ -9,6 +9,7 @@ class rex_com_auth_simplesamlphp
     $this->hash_func = $REX['ADDON']['community']['plugin_auth']['passwd_algorithmus'];            
     $this->isHashed = $REX['ADDON']['community']['plugin_auth']['passwd_hashed'];
     $this->article_login_failed = $REX['ADDON']['community']['plugin_auth']['article_login_failed'];
+    $this->article_login_idmissing = $REX['ADDON']['community']['plugin_auth_simplesamlphp']['article_login_idmissing'];
     $this->article_login_ok = $REX['ADDON']['community']['plugin_auth']['article_login_ok'];
     $this->logoutUrl = '/index.php?article_id='.$REX['ADDON']['community']['plugin_auth']['article_logout'].'&rex_com_auth_logout=1';
     $this->redirect = $REX['ADDON']['community']['plugin_auth_simplesamlphp']['redirect'];
@@ -58,7 +59,7 @@ class rex_com_auth_simplesamlphp
 
         // Don't create User if eduPearsontargetID is empty -> results in empty username!
         if($eduPersonTargetedID=='') {
-          rex_redirect($this->article_login_failed);
+          rex_redirect($this->article_login_idmissing);
         }
 
 
