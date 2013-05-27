@@ -1,0 +1,37 @@
+com_auth_simplesamlphp = SimpleSAMLphp
+com_auth_simplesamlphp_samlidp = IDP which authenticated logged in user
+
+com_auth_simplesamlphp_settings = Settings
+com_auth_simplesamlphp_settings_description = You have to configure your Service Provider in simpleSAMLphp. Just add the path to the simpleSAML _autoload.php and the authentication service you like to use (default is 'default-sp').
+com_auth_simplesamlphp_settings_simplesamlphp = simpleSAMLphp Settings
+com_auth_simplesamlphp_settings_simplesamlphpPath = path to simpleSAML _autoload.php
+com_auth_simplesamlphp_settings_authSource = Authentication service
+com_auth_simplesamlphp_settings_authSource_description = authentication service you like to use (default is 'default-sp')
+com_auth_simplesamlphp_settings_newuser = Standard Settings for new simpleSAML users
+com_auth_simplesamlphp_settings_memberof = Group Memberships
+com_auth_simplesamlphp_settings_none = none
+com_auth_simplesamlphp_settings_update = updatet
+com_auth_simplesamlphp_settings_failupdate = The changes cannot be updated. Please check the file permissions.
+
+com_auth_info_id_jump_login_missing = Redirect if metadata is missing
+
+com_auth_simplesamlphp_help_login_hl = Embbeding the login on this website
+com_auth_simplesamlphp_help_login =  The login procedure needs the module 'simpleSAMLphpLogin'. The article containing this module redirects to the Identity Provider and redirects afterwards to article_login_ok or article_login_failed. If a user logins for the first time, a new user is created with eduPersonTargetedID as login name. 
+
+com_auth_simplesamlphp_info_installfinish = The Plugin can now be configured in the Community Addon!
+com_auth_simplesamlphp_error_missingaddons = Please check if following addons are available: Community
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
