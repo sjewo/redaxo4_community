@@ -29,6 +29,35 @@ class rex_com_auth_simplesamlphp
   }
 
   //
+  // Set SAML Authentication Source
+  //
+  public function setAuthSource($source) {
+    $this->authSource = $source;
+  }
+
+  //
+  // Set Redirect after login
+  //
+  public function setArticleLoginOk($article_id) {
+        $this->article_login_ok = $article_id;
+  }
+
+  //
+  // Set Redirect after failed log
+  //
+  public function setArticleLoginFailed($article_id) {
+        $this->article_login_failed = $article_id;
+  }
+
+  //
+  // Set Redirect if metadata is missing
+  //
+  public function setArticleLoginIdMissing($article_id) {
+        $this->article_login_idmising = $article_id;
+  }
+
+
+  //
   // Authentificate user with simplesamlphp
   // creates local user
   // 
